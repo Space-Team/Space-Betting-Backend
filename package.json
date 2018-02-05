@@ -1,0 +1,23 @@
+{
+  "name": "space-betting-backend",
+  "version": "1.0.0",
+  "description": "Server side for Planet Wager app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Amber Johnson, Kyle Weintraub, Emily Pancake, and Paul Highum",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "knex": "^0.14.2",
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  }
+}
