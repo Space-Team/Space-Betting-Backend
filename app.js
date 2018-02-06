@@ -34,12 +34,11 @@ app.get('/bets', (req, res) => {
     .catch(console.error);
 });
 
-// POST to create a new user or 
-app.post('/', (req, res) => {
+app.post('/users', (req, res) => {
   queries
     .create(req.body)
-    .then(res => {
-      res.sendStatus(201).json({resolution});
+    .then(user => {
+      res.status(201).json({user});
     })
     .catch(console.error);
 });

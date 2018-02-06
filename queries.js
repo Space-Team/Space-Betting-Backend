@@ -8,17 +8,17 @@ module.exports = {
     return database('bets')
       .join('users', 'users.id', '=', 'bets.creator')
       .select('users.name', 'bets.id', 'bets.description', 'bets.amount', 'bets.accepted', 'bets.resolved', 'bets.winner', 'bets.date', 'bets.comment');
-  }
+  },
+  create(user) {
+    return database('users')
+      .insert(user)
+      .returning('*')
+      .then(record => record[0]);
+  },
   // read(id) {
   //   return database('resolution')
   //     .where('id', id)
   //     .first();
-  // },
-  // create(resolution) {
-  //   return database('resolution')
-  //     .insert(resolution)
-  //     .returning('*')
-  //     .then(record => record[0]);
   // },
   // update(id, resolution) {
   //   return database('resolution')
