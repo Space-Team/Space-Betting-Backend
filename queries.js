@@ -4,7 +4,7 @@ module.exports = {
   list(table){
     return database(table)
   },
-  creatorBets(id){
+  creatorBets(){
     return database("bets")
       .join("users", "users.id", "=", "bets.creator")
       .select(
@@ -18,6 +18,55 @@ module.exports = {
         "bets.date",
         "bets.comment"
       )
+  },
+  creatorBetsRead(id){
+    return database("bets")
+      .join("users", "users.id", "=", "bets.creator")
+      .select(
+        "users.name",
+        "bets.id",
+        "bets.description",
+        "bets.amount",
+        "bets.accepted",
+        "bets.resolved",
+        "bets.winner",
+        "bets.date",
+        "bets.comment"
+      )
+      .where("users.id", id)
+      .returning("*")
+  },
+  acceptorBets(){
+    return database("bets")
+      .join("users", "users.id", "=", "bets.acceptor")
+      .select(
+        "users.name",
+        "bets.id",
+        "bets.description",
+        "bets.amount",
+        "bets.accepted",
+        "bets.resolved",
+        "bets.winner",
+        "bets.date",
+        "bets.comment"
+      )
+  },
+  acceptorBetsRead(id){
+    return database("bets")
+      .join("users", "users.id", "=", "bets.acceptor")
+      .select(
+        "users.name",
+        "bets.id",
+        "bets.description",
+        "bets.amount",
+        "bets.accepted",
+        "bets.resolved",
+        "bets.winner",
+        "bets.date",
+        "bets.comment"
+      )
+      .where("users.id", id)
+      .returning("*")
   },
   createUser(user){
     return database("users")

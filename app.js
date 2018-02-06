@@ -7,9 +7,36 @@ const queries = require("./queries")
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get("/creator-bets/", (req, res) => {
+app.get("/creator-bets", (req, res) => {
   queries
-    .creatorBets(req.params.id)
+    .creatorBets()
+    .then(bets => {
+      res.json({ bets })
+    })
+    .catch(console.error)
+})
+
+app.get("/creator-bets/:id", (req, res)=> {
+  queries
+    .creatorBetsRead(req.params.id)
+    .then(bets => {
+      res.json({ bets })
+    })
+    .catch(console.error)
+})
+
+app.get("/acceptor-bets", (req, res)=> {
+  queries
+    .acceptorBets()
+    .then(bets => {
+      res.json({ bets })
+    })
+    .catch(console.catch)
+})
+
+app.get("/acceptor-bets/:id", (req, res)=> {
+  queries
+    .acceptorBetsRead(req.params.id)
     .then(bets => {
       res.json({ bets })
     })
