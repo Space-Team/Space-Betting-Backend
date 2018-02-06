@@ -7,9 +7,7 @@ module.exports = {
   creatorBets(id) {
     return database('bets')
       .join('users', 'users.id', '=', 'bets.creator')
-      .select('users.name', 'bets.id', 'bets.description', 'bets.amount', 'bets.accepted', 'bets.resolved', 'bets.winner', 'bets.date', 'bets.comment')
-      .where('users.id', id)
-      .returning('*');
+      .select('users.name', 'bets.id', 'bets.description', 'bets.amount', 'bets.accepted', 'bets.resolved', 'bets.winner', 'bets.date', 'bets.comment');
   }
   // read(id) {
   //   return database('resolution')

@@ -34,14 +34,15 @@ app.get('/bets', (req, res) => {
     .catch(console.error);
 });
 
-// app.post('/', (req, res) => {
-//   queries
-//     .create(req.body)
-//     .then(res => {
-//       res.status(201).json({resolution: resolution});
-//     })
-//     .catch(console.error);
-// });
+// POST to create a new user or 
+app.post('/', (req, res) => {
+  queries
+    .create(req.body)
+    .then(res => {
+      res.sendStatus(201).json({resolution});
+    })
+    .catch(console.error);
+});
 
 app.use((req, res) => {
   res.sendStatus(404);
