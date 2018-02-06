@@ -36,9 +36,18 @@ app.get('/bets', (req, res) => {
 
 app.post('/users', (req, res) => {
   queries
-    .create(req.body)
+    .createUser(req.body)
     .then(user => {
       res.status(201).json({user});
+    })
+    .catch(console.error);
+});
+
+app.post('/bets', (req, res) => {
+  queries
+    .createBet(req.body)
+    .then(bet => {
+      res.status(201).json({bet});
     })
     .catch(console.error);
 });

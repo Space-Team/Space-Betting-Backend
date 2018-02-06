@@ -9,9 +9,15 @@ module.exports = {
       .join('users', 'users.id', '=', 'bets.creator')
       .select('users.name', 'bets.id', 'bets.description', 'bets.amount', 'bets.accepted', 'bets.resolved', 'bets.winner', 'bets.date', 'bets.comment');
   },
-  create(user) {
+  createUser(user) {
     return database('users')
       .insert(user)
+      .returning('*')
+      .then(record => record[0]);
+  },
+  createBet(bet) {
+    return database('bets')
+      .insert(bet)
       .returning('*')
       .then(record => record[0]);
   },

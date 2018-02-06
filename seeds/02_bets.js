@@ -49,5 +49,8 @@ exports.seed = function(knex, Promise) {
           comment: 'We both guessed equally badly.'
         }
       ]);
+    })
+    .then(() => {
+      return knex.raw('ALTER SEQUENCE bets_id_seq RESTART WITH 5');
     });
 };
