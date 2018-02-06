@@ -7,7 +7,7 @@ const queries = require('./queries');
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/user-bets/:id', (req, res) => {
+app.get('/creator-bets/', (req, res) => {
   queries
     .creatorBets(req.params.id)
     .then(bets => {
