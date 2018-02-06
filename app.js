@@ -52,11 +52,29 @@ app.get("/users", (req, res) => {
     .catch(console.error)
 })
 
+app.get("/users/:id", (req, res) => {
+  queries
+    .read("users", req.params.id)
+    .then(user => {
+      user ? res.json({ user }) : res.sendStatus(404);
+    })
+    .catch(console.error)
+})
+
 app.get("/bets", (req, res) => {
   queries
     .list("bets")
     .then(bets => {
       res.json({ bets })
+    })
+    .catch(console.error)
+})
+
+app.get("/bets/:id", (req, res) => {
+  queries
+    .read("bets", req.params.id)
+    .then(bet => {
+      bet ? res.json({ bet }) : res.sendStatus(404);
     })
     .catch(console.error)
 })

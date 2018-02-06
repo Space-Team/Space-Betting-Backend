@@ -4,6 +4,11 @@ module.exports = {
   list(table){
     return database(table)
   },
+  read(table, id) {
+    return database(table)
+      .where("id", id)
+      .first()
+  },
   creatorBets(){
     return database("bets")
       .join("users", "users.id", "=", "bets.creator")
