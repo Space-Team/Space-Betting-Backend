@@ -12,7 +12,6 @@ exports.seed = function(knex, Promise) {
           creator: 1,
           acceptor: null,
           winner: null,
-          date: '2018-02-05',
           comment: ''
         },
         {
@@ -24,7 +23,6 @@ exports.seed = function(knex, Promise) {
           creator: 2,
           acceptor: 1,
           winner: null,
-          date: '2018-02-05',
           comment: ''
         },
         {
@@ -36,7 +34,6 @@ exports.seed = function(knex, Promise) {
           creator: 3,
           acceptor: 1,
           winner: 1,
-          date: '2018-02-05',
           comment: 'Kyle has not yet paid up.'
         },
         {
@@ -49,7 +46,6 @@ exports.seed = function(knex, Promise) {
           creator: 2,
           acceptor: 4,
           winner: null,
-          date: '2018-02-05',
           comment: 'We both guessed equally badly.'
         }
       ]);

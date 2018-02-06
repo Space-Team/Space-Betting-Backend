@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('creator').references('users.id');
     table.integer('acceptor').references('users.id');
     table.integer('winner').references('users.id');
-    table.date('date');
+    table.timestamp('date').defaultTo(knex.fn.now());
     table.text('comment');
   });
 };

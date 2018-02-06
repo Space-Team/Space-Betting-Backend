@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.text('password');
     table.integer('spacebucks');
     table.integer('image');
-    table.date('date');
+    table.timestamp('date').defaultTo(knex.fn.now());
     table.text('firstName');
     table.text('lastName');
   });

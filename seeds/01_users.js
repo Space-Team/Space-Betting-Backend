@@ -9,7 +9,6 @@ exports.seed = function(knex, Promise) {
           password: 'pretty',
           spacebucks: 100,
           image: 1,
-          date: '2018-02-05',
           firstName: 'Paul',
           lastName: 'Highum'
         },
@@ -19,7 +18,6 @@ exports.seed = function(knex, Promise) {
           password: 'evil',
           spacebucks: 100,
           image: 2,
-          date: '2018-02-05',
           firstName: 'Emily',
           lastName: 'Pancake'
         },
@@ -29,7 +27,6 @@ exports.seed = function(knex, Promise) {
           password: 'crocodile',
           spacebucks: 100,
           image: 4,
-          date: '2018-02-05',
           firstName: 'Kyle',
           lastName: 'Weintraub'
         },
@@ -39,7 +36,6 @@ exports.seed = function(knex, Promise) {
           password: 'adventurous',
           spacebucks: 100,
           image: 3,
-          date: '2018-02-05',
           firstName: 'Amber',
           lastName: 'Johnson'
         }
