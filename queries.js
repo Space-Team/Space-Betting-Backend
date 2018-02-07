@@ -91,22 +91,5 @@ module.exports = {
       .where("id", id)
       .returning("*")
       .then(record => record[0])
-  },
-  // read(id) {
-  //   return database('resolution')
-  //     .where('id', id)
-  //     .first();
-  // },
-  // update(id, resolution) {
-  //   return database('resolution')
-  //     .update(resolution)
-  //     .where('id', id)
-  //     .returning('*')
-  //     .then(record => record[0]);
-  // },
-  // delete(id) {
-  //   return database('resolution')
-  //     .where('id', id)
-  //     .del();
-  // }
+  }
 }
