@@ -5,6 +5,15 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert([
         {
           id: 1,
+          name: 'no winner',
+          password: 'adminonly',
+          spacebucks: 100,
+          image: 3,
+          firstName: 'no',
+          lastName: 'winner'
+        },
+        {
+          id: 2,
           name: 'pretty-paul',
           password: 'pretty',
           spacebucks: 100,
@@ -13,7 +22,7 @@ exports.seed = function(knex, Promise) {
           lastName: 'Highum'
         },
         {
-          id: 2,
+          id: 3,
           name: 'evil-emily',
           password: 'evil',
           spacebucks: 100,
@@ -22,7 +31,7 @@ exports.seed = function(knex, Promise) {
           lastName: 'Pancake'
         },
         {
-          id: 3,
+          id: 4,
           name: 'crocodile-kyle',
           password: 'crocodile',
           spacebucks: 100,
@@ -31,7 +40,7 @@ exports.seed = function(knex, Promise) {
           lastName: 'Weintraub'
         },
         {
-          id: 4,
+          id: 5,
           name: 'adventurous-amber',
           password: 'adventurous',
           spacebucks: 100,
@@ -42,6 +51,6 @@ exports.seed = function(knex, Promise) {
       ]);
     })
     .then(() => {
-      return knex.raw('ALTER SEQUENCE users_id_seq RESTART WITH 5');
+      return knex.raw('ALTER SEQUENCE users_id_seq RESTART WITH 6');
     });
 };
