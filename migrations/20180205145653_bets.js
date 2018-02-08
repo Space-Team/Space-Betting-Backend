@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
     table.integer('winner').references('users.id');
     table.integer('creatorAttempt');
     table.integer('acceptorAttempt');
+    table.boolean('paid');
     table.timestamp('date').defaultTo(knex.fn.now());
     table.text('comment');
   });
