@@ -59,6 +59,21 @@ exports.seed = function(knex, Promise) {
           acceptorAttempt: 1,
           paid: false,
           comment: "We both guessed equally badly."
+        },
+        {
+          id: 5,
+          description:
+            "Everyone in our group will throw up during the presentation",
+          amount: 8,
+          accepted: true,
+          resolved: false,
+          creator: 5,
+          acceptor: 3,
+          winner: null,
+          creatorAttempt: null,
+          acceptorAttempt: 5,
+          paid: false,
+          comment: ""
         }
       ])
     })
