@@ -78,6 +78,6 @@ exports.seed = function(knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE bets_id_seq RESTART WITH 5")
+      return knex.raw("ALTER SEQUENCE bets_id_seq RESTART WITH 6")
     })
 }
