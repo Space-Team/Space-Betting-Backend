@@ -23,8 +23,11 @@ From here you can run the database locally using ```npm run dev```.
 # Authors
 
 [Paul Highum](https://github.com/paulhighum)
+<br>
 [Amber Johnson](https://github.com/amberjohnsonsmile)
+<br>
 [Emily Pancake](https://github.com/epancake)
+<br>
 [Kyle Weintraub](https://github.com/themoonmoth)
 
 # License
