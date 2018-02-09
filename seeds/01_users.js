@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert([
         {
           id: 1,
-          name: 'no winner',
+          name: 'No one',
           password: 'adminonly',
           spacebucks: 100,
           image: 3,
