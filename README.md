@@ -20,5 +20,5 @@ After creating the database you will need to run ```knex migrate:latest``` and `
 
 From here you can run the database locally using ```npm run dev```.
 
-
-
+# License
+MIT
